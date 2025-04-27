@@ -2,16 +2,17 @@
 #include<iostream>
 using namespace std;
 
-void extremeArray(int arr[], int size){
+void extremePrint(int arr[], int size){
     int left=0, right=size-1;
-    while(left<right){
-        swap(arr[left], arr[right]);
+    while(left<=right){
+        if(left==right){
+            cout<<arr[left];
+        }
+        else{
+            cout<<arr[left]<<" "<<arr[right]<<" ";
+        }
         left++;
         right--;
-    }
-    cout<<"\nArray after reversing is: ";
-    for(int i=0; i<size; i++){
-        cout<<arr[i]<<" ";
     }
 }
 
@@ -22,6 +23,7 @@ int main(){
     for(int i=0; i<size; i++){
         cout<<arr[i]<<" ";
     }
-    extremeArray(arr, size); // Calling function
+    cout<<endl;
+    extremePrint(arr, size); // Calling function
     return 0;
 }
